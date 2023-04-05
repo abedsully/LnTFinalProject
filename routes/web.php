@@ -1,6 +1,7 @@
 
 <?php
 
+use App\Http\Controllers\BarangController;
 use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
@@ -30,12 +31,15 @@ Route::post('/register', [RegisterController::class, 'store']);
 
 Route::get('/login', [LoginController::class, 'view'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);
-Route::post('/logout', [LoginController::class, 'logout']);
+Route::post('/logout', [LoginController::class, 'logout'])->middleware('auth');
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
-Route::get('/dashboard-admin', function () {
-    return view('adminpage');
-})->middleware('auth', 'isAdmin');
+
+Route::get('/dashboard', [BarangController::class, 'index'])->middleware('auth');
+
+Route::get('/create', [BarangController::class, 'create'])->middleware('auth', 'isAdmin');
+Route::post('/store', [BarangController::class, 'store'])->middleware('auth', 'isAdmin');
+
 
 
 

@@ -37,27 +37,6 @@
             </div>
         </nav>
 
-        <section id="main">
-            <div class="main-bg">
-                <div class="main-desc">
-                    <img src="/assets/cart.png" alt="Cart" width="400" height="400">
-                    <div class="main-desc-2">
-                        <h1>PT Meksiko</h1>
-                        <p>Effortlessly collect and manage <br> your web-based data with ease!</p>
-                        @auth
-                        <a href="dashboard">Dashboard</a>
-                        @else
-                        <a href="/register">Get Started</a>
-                        @endauth
-
-
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-
 
         <nav class="copyright">
             <p>Copyright &#169; 2023 PT Meksiko</p>

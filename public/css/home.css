@@ -58,15 +58,6 @@ body{
     padding-top: 1.5rem;
 }
 
-#testimonials{
-    padding: 0rem 3rem;
-    background-color: #E7AB9A;
-}
-
-#testinominals .testimonials-customer{
-    display: flex;
-}
-
 .copyright{
     background-color: #EDE9D5;
 }
