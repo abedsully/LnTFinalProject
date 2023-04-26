@@ -21,6 +21,16 @@ body {
     display: inline-block;
   }
 
+.card{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card > div {
+    flex: 50%;
+    margin-bottom: 10px;
+  }
+
 
   @media (max-width: 991.98px) {
     .sidebar {

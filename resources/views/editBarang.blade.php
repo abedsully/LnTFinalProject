@@ -25,12 +25,13 @@
 
     <h4 class="text-center mt-5">Create New Item</h4>
 
-    <form action="/store" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('update', $barang->id )}}" method="POST" enctype="multipart/form-data">
         @csrf
+        @method('patch')
         <div class="d-flex flex-column align-items-center pt-3 gap-3">
             <div class="form-group col-4">
             <label for="exampleInputEmail1">Category</label>
-            <input type="text" class="form-control @error('category') is-invalid @enderror " id="exampleInputPassword1" placeholder="Enter the category" name="category" value="{{ old('category') }}" >
+            <input type="text" class="form-control @error('category') is-invalid @enderror " id="exampleInputPassword1" placeholder="Enter the category" name="category" value="{{ $barang->category }}" >
               @error('category')
                 <div class="invalid-feedback">
                     {{ $message }}
@@ -40,7 +41,7 @@
 
             <div class="form-group col-4">
                 <label for="exampleInputPassword1">Name</label>
-                <input type="text" class="form-control @error('name') is-invalid @enderror " id="exampleInputPassword1" placeholder="Enter the name" name="name" value="{{ old('name') }}" >
+                <input type="text" class="form-control @error('name') is-invalid @enderror " id="exampleInputPassword1" placeholder="Enter the name" name="name" value="{{ $barang->name }}" >
                 @error('name')
                 <div class="invalid-feedback">
                     {{ $message }}
@@ -50,7 +51,7 @@
 
             <div class="form-group col-4">
                 <label for="exampleInputPassword1">Price</label>
-                <input type="text" class="form-control @error('price') is-invalid @enderror" id="exampleInputPassword1" placeholder="Enter the price" name="price" value="{{ old('price') }}">
+                <input type="text" class="form-control @error('price') is-invalid @enderror" id="exampleInputPassword1" placeholder="Enter the price" name="price" value="{{ $barang->price }}">
                 @error('price')
                 <div class="invalid-feedback">
                     {{ $message }}
@@ -60,7 +61,7 @@
 
             <div class="form-group col-4">
                 <label for="exampleInputPassword1">Stock</label>
-                <input type="text" class="form-control @error('stock') is-invalid @enderror" id="exampleInputPassword1" placeholder="Enter the stock" name="stock" value="{{ old('stock') }}">
+                <input type="text" class="form-control @error('stock') is-invalid @enderror" id="exampleInputPassword1" placeholder="Enter the stock" name="stock" value="{{ $barang->stock }}">
                 @error('stock')
                 <div class="invalid-feedback">
                     {{ $message }}
@@ -70,7 +71,7 @@
 
             <div class="form-group col-4">
                 <label for="exampleInputPassword1">Image</label>
-                <input type="file" class="form-control @error('image') is-invalid @enderror" id="exampleInputPassword1" name="image" value="{{ old('image') }}">
+                <input type="file" class="form-control @error('image') is-invalid @enderror" id="exampleInputPassword1" name="image" value="{{ $barang->image }}">
                 @error('image')
                 <div class="invalid-feedback">
                     {{ $message }}
